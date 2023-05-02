@@ -17,8 +17,8 @@ def login(request):
                 password_id = NewUser.objects.filter(password=password)
                 print(login_id[0].teams_name, password_id[0].teams_name)
                 if (login_id[0].teams_name == password_id[0].teams_name):
-                    id = NewUser.objects.filter(login=login)[0].id
-                    return HttpResponseRedirect(reverse('account', id))
+                    context = {'id': NewUser.objects.filter(login=login)[0].id, 'name': login_id[0].teams_name, 'status': 'Выйти'}
+                    return render(request, 'user_account/user_account_index.html', context)
                 else:
                     error = 'Неверный логин или пароль'
 
