@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="{% static 'main/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<section class="content">
+    {% include 'main/header.html' %}
+    <section class="main">
+        <div class="main-left">
+            <div class="main-left-text">
+                <h1>Забронируй зал для репетиции всего за 10 секунд</h1>
+                <h4>Комфортное тренировочное пространствo без лишнего общения. Только для cover dance сообщества
+                    Барнаула</h4>
+            </div>
+            <a href="{% url 'login' %}">Выбрать время</a>
+        </div>
+        <div class="main-right">
+            <img src="{% static 'main/img/dance_room.jpeg' %}" alt="">
+        </div>
+    </section>
+
+    <section class="about-us">
+        <h3>Как это работает?</h3>
+        <p>Мы создали удобный сервис, чтобы обеспечить беспрепятственный доступ к танцевальному залу 24/7 без путаниц и
+            лишнего общения с посторонними людьми. <br> До твоей первой репитиции в зале всего 3 шага:</p>
+        <div class="options">
+            <article>
+                <figure><img src="{% static 'main/img/1.png' %}" alt=""></figure>
+                <h4>Регистрация</h4>
+                <p>Оставь заявку на получение свободного доступа к залу, заполнив форму на сайте</p>
+                <a href="{% url 'form' %}">Подать заявку</a>
+            </article>
+            <hr>
+            <article>
+                <figure><img src="{% static 'main/img/2.png' %}" alt=""></figure>
+                <h4>Коды доступа</h4>
+                <p>С тобой свяжется администратор, объяснит правила пребывания в зале и предоставит коды доступа </p>
+                <a href="{% url 'faq' %}">FAQ</a>
+            </article>
+            <hr>
+            <article>
+                <figure><img src="{% static 'main/img/3.png' %}" alt=""></figure>
+                <h4>Резерв зала</h4>
+                <p>Выбери удобный день и время для репетиций в своем личном кабинете.</p>
+                <a href="{% url 'login' %}">Выбрать время</a>
+            </article>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="different-info">
+        <h3>Чем мы отличаемся от других залов?</h3>
+        <ul>
+            <article class="flex-info"><i class="fa-solid fa-circle-check"></i>
+                <li>Резерв зала полностью цифровизирован, что позволяет избежать путаницы и пересечений с другими
+                    командами
+                </li>
+            </article>
+            <br>
+            <article class="flex-info"><i class="fa-solid fa-circle-check"></i>
+                <li></li>
+                Больше не нужно ни с кем договариваться, просто выбери подходящее время и приходи на репетицию</li>
+            </article>
+            <br>
+            <article class="flex-info"><i class="fa-solid fa-circle-check"></i>
+                <li></li>
+                Доступ к залу 24/7, без ожиданий администратора. Приходишь, открываешь и занимаешься в любое время</li>
+            </article>
+            <br>
+            <article class="flex-info"><i class="fa-solid fa-circle-check"></i>
+                <li></li>
+                Пространство только для cover dance комьюнити и людей, увлеченных Азией. Чувствуй себя как дома</li>
+            </article>
+            <br>
+            <article class="flex-info"><i class="fa-solid fa-circle-check"></i>
+                <li></li>
+                Мы постоянно работаем над модернизацией зала, добавляя новое оборудование, чтобы с нами было еще
+                комфортнее</li></article>
+        </ul>
+    </section>
+
+    <section class="request">
+        <h3>Еще не занимался у нас? <br>
+            Заполни форму!
+        </h3>
+        <p>Оставь заявку на получение свободного доступа к залу. С тобой свяжется администратор и можно начинать!</p>
+        <a href="{% url 'form' %}">Подать заявку</a>
+    </section>
+
+</section>
+</body>
+</html>

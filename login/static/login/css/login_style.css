@@ -1,0 +1,49 @@
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(133,1,194,1) 45%, rgba(0,212,255,0) 100%);
+    margin: 3rem;
+    width: 95vw;
+    height: 95vh;
+}
+
+.content{
+    padding: 1rem;
+    height: min-content;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
+form{
+    padding: 1.5rem 2rem;
+}
+
+.btn{
+    background-color: #3A4754;
+}
+
+.btn:hover{
+    background-color: #8501C2;
+}
+
+.logo{
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-new-account{
+    display: block;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-new-account:hover{
+    color: white;
+}

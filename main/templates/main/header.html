@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/css/header_style.css' %}">
+<header class="header">
+    <a href="{% url 'main' %}"><img class="logo" src="{% static 'main/img/logo.png' %}" alt=""></a>
+    <nav>
+        <ul class="nav">
+            <a href="{% url 'login' %}">Забронировать зал</a>
+            <a href="{% url 'news' %}">Новости</a>
+            <a href="{% url 'faq' %}">FAQ</a>
+        </ul>
+    </nav>
+    <a href="{% url 'login' %}" class="btn-login">{{status}}</a>
+</header>
