@@ -243,26 +243,34 @@ header .current-date{
     font-weight: 500;
 }
 
-.choose-time{
-    padding: 3.5rem 2rem;
-    width: 100%;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-    text-align: center;
-}
-
-.choose-time li{
-    list-style: none;
-    cursor: pointer;
-    font-size: 1.07rem;
-}
-
-.choose-time ul{
-    margin: 1rem 0
-}
-
 .calendar-box{
     display: flex;
     justify-content: center;
+}
+
+.free-time-item{
+    background-color: rgb(135, 200, 135);
+    color: white;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0.3rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-align: center;
+    width: 110px;
+}
+
+.free-time-item:hover{
+  color: #202135;
+  background-color: #9B59B6;
+  cursor: pointer;
+}
+
+.red{
+  background: gray;
+  cursor:not-allowed;
+}
+
+#time-content button{
+  margin-top: 1rem;
 }
