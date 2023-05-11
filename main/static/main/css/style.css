@@ -12,7 +12,7 @@ body{
 }
 
 .main{
-    background-color: #202135;
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(133,1,194,1) 45%, rgba(0,212,255,0) 100%);
     display: flex;
 }
 
@@ -40,7 +40,7 @@ body{
 
 .main-left h4{
     font-size: 1.5rem;
-    color: #C9C9C9;
+    color: #E8E8E8;
     width: 90%;
 }
 
@@ -51,7 +51,7 @@ body{
 .main-left a{
     padding: 15px 40px 15px 40px;
     font-size: 1rem;
-    background-color: #C9C9C9;
+    background-color: #E8E8E8;
     color: #202135;
     border-radius: 25px;
     text-decoration: none;
@@ -83,9 +83,9 @@ body{
     background-color: #D3D3D3;
 }
 
-.about-us h3, .different-info h3, .request h3{
+.about-us h3, .different-info h3{
     font-size: 2rem;
-    color: #3A4754;
+    color: #8A00C8;
 }
 
 .about-us p, .request p{
@@ -93,8 +93,8 @@ body{
     font-size: 1rem;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 1rem;
 }
-
 
 .options{
     display: flex;
@@ -114,8 +114,8 @@ body{
 .options a{
     padding: 15px 30px 15px 30px;
     font-size: 1rem;
-    background-color: #878A99;
-    color: #202135;
+    background-color: #202135;
+    color: white;
     border-radius: 25px;
     text-decoration: none;
     text-transform: uppercase;
@@ -128,8 +128,9 @@ body{
 }
 
 .options a:hover{
-    box-shadow: 0 0 0.7em 0 #8501C2, 0 0 0.7em 0 #8501C2;
     transform: scale(1.05);
+    background-color: #8501C2;
+    color: white;
 }
 
 .different-info{
@@ -160,10 +161,15 @@ body{
 }
 
 .request{
-    background-color: #EDF0F4;
-    padding-top: 3rem;
+    background-color: white;
+    padding-top: 2rem;
     text-align: center;
     padding-bottom: 3rem;
+}
+
+.request h3{
+    color: #8A00C8;
+    font-size: 2rem;
 }
 
 .request a{

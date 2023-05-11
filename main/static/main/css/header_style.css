@@ -6,6 +6,7 @@
     margin: 0rem auto;
     padding: 1rem 0;
     font-size: 1.2rem;
+
 }
 
 .nav{
@@ -40,7 +41,7 @@
 }
 
 .btn-login{
-    padding: 10px 35px 10px 35px;
+    padding: 15px 40px;
     font-size: 0.8rem;
     background-color: #202135;
     color: white;
@@ -56,4 +57,5 @@
 .btn-login:hover{
     box-shadow: 0 0 0.7em 0 #8501C2, 0 0 0.7em 0 #8501C2;
     transform: scale(1.05);
+    color: white;
 }

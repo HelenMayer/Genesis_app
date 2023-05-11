@@ -5,7 +5,7 @@ prevNextIcon = document.querySelectorAll(".icons span");
 let date = new Date(),
 currYear = date.getFullYear(),
 currMonth = date.getMonth();
-let result_time = "";
+const full_time = [];
 // storing full name of all months in array
 const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль",
               "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
@@ -56,13 +56,13 @@ prevNextIcon.forEach(icon => { // getting prev and next icons
 function currentData(id, month){
     console.log('id= '+id, 'month '+month)
     let current_day=id
-    let current_month = month+1
+    let current_month = month+1;
     let content = document.getElementById("time-content")
     content.textContent = ""
     content.innerHTML += `
     <section class="choose-time">
     <h4>Выберите время</h4>
-      <div class="free-time">
+      <div id="free-time" class="free-time">
         <div class="row">
             <a id="1.1" class="free-time-item col-sm">00:00-00:30</a>
             <a id="2.1" class="free-time-item col-sm">00:30-01:00</a>
@@ -89,11 +89,11 @@ function currentData(id, month){
         </div>
         <div class="row">
             <a id="19.1" class="free-time-item col-sm">09:00-09:30</a>
-            <a id=20.1" class="free-time-item col-sm">09:30-10:00</a>
+            <a id="20.1" class="free-time-item col-sm">09:30-10:00</a>
             <a id="21.1" class="free-time-item col-sm red">10:00-10:30</a>
             <a id="22.1" class="free-time-item col-sm red">10:30-11:00</a>
             <a id="23.1" class="free-time-item col-sm red">11:00-11:30</a>
-            <a id=24.1" class="free-time-item col-sm red">11:30-12:00</a>
+            <a id="24.1" class="free-time-item col-sm red">11:30-12:00</a>
         </div>
         <div class="row">
             <a id="25.1" class="free-time-item col-sm">12:00-12:30</a>
@@ -131,30 +131,51 @@ function currentData(id, month){
       <button id="submit_btn" class="btn-login">Подтвердить</button>
       </section>
       `
-      content.addEventListener('click',e => {current_time(e.target.textContent, e.target.id, current_day, current_month)})
+      let choose_time = document.getElementById("free-time")
+      choose_time.addEventListener('click',e => {
+      console.log(e.target.textContent, e.target.id, current_day, current_month)
+      current_time(e.target.textContent, e.target.id, current_day, current_month)
+      })
 
 }
 
 function current_time(current_time, id, current_day, current_month){
-    this.result_time = this.result_time + current_time;
+    console.log("Time "+current_time)
+    full_time.push(current_time);
     document.getElementById(id).style.background = "#8501c242";
     document.getElementById(id).style.color = "black";
-    let submit = document.getElementById("submit_btn");
-    submit.addEventListener('click', submit_data(result_time, current_day, current_month))
+    let submit_button = document.getElementById("submit_btn");
+    submit_button.addEventListener('click', e => {submit_data(current_day, current_month)})
 
 }
 
-//const xhttp = new XMLHttpRequest();
-//xhttp.onload = function() {
-  // What to do when the response is ready
-//}
-
-function submit_data(result_time, current_day, current_month){
-    result = {
-    'resul_time': result_time,
-    'current_day': current_day,
-    'current_month': current_month
-    };
-    time_in_json = JSON.stringify(result)
-    console.log(time_in_json)
+function submit_data(current_day, current_month){
+    console.log(full_time)
 }
+
+
+$(document).ready(function() {
+        // привязываем обработчик нажатия кнопки
+        $('#my_btn').click(function(event, result_time, current_day, current_month) {
+        console.log(result_time, current_day, current_month)
+          // выполняем AJAX-запрос
+          $.ajax({
+            type: "POST",
+            url: "/path/to/views.py",
+            data: {
+                'resul_time': result_time,
+                'current_day': current_day,
+                'current_month': current_month
+            },
+            success: function(response) {
+              // обработка ответа от сервера
+                console.log('Success!')
+            },
+            error: function(response) {
+              // обработка ошибок
+              console.log(response)
+            }
+          });
+        });
+      });
+

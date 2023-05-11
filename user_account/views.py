@@ -7,7 +7,9 @@ def account(request):
 
 
 def sendingdata(request):
-    if request.is_ajax():
-        result = request.GET.get('result', None)
-        print(result)
+    if request.method == "POST":
+        result_time = request.POST.get("result_time")
+        current_day = request.POST.get("current_day")
+        current_month = request.POST.get("current_month")
+        print(result_time)
     return HttpResponse("OK")
