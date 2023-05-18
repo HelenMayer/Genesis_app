@@ -11,67 +11,6 @@ body{
     line-height: 1.5;
 }
 
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.2rem;
-}
-
-.nav{
-    display: flex;
-    list-style: none;
-    text-align: center;
-    font-weight: bold;
-}
-
-.nav a{
-    list-style: none;
-    text-decoration: none;
-    color: #3A4754;
-    display: block;
-    padding-left: 40px;
-    padding-right: 40px;
-    transition: all .6s ease;
-}
-
-.nav a:hover{
-    color: #8501C2;
-    transform: scale(1.05);
-}
-
-.logo{
-    width: 220px;
-    transition: all .6s ease;
-}
-
-.logo:hover{
-    transform: scale(1.05);
-}
-
-.btn-login{
-    padding: 10px 35px 10px 35px;
-    font-size: 0.8rem;
-    background-color: #202135;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    text-decoration: none;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: all .6s ease;
-}
-
-.btn-login:hover{
-    box-shadow: 0 0 0.7em 0 #8501C2, 0 0 0.7em 0 #8501C2;
-    transform: scale(1.05);
-    color: white;
-}
-
 .main{
     /*background-color: #202135;*/
     /*background: url("../img/hall.jpg");*/
@@ -81,9 +20,10 @@ body{
 }
 
 .main-left{
-    width: 50%;
+    width: 60%;
     text-align: left;
     font-weight: 900;
+    margin-left: 3rem;
 }
 
 .main-left-text{
@@ -92,17 +32,8 @@ body{
     width: 80%;
 }
 
-.accordion-button:not(.collapsed){
-    color: #8501C2;
-    background-color: #8501c242;
-}
-
-.accordion-body{
-    background-color: #d3d3d36a;
-}
-
 .main-left h1{
-    font-size: 2.3rem;
+    font-size: 3rem;
     color: #8A00C8;
     width: 90%;
     text-shadow: 1px 1px black;
@@ -110,8 +41,15 @@ body{
     font-weight: 900;
 }
 
+.main-left p{
+    font-size: 1.7rem;
+}
+
 .main-right{
-    width: 50%;
+    width: 40%;
+    text-align: right;
+    color: white;
+    margin: auto 3rem;
 }
 
 .booking{
@@ -159,5 +97,82 @@ body{
     color: white;
     transform: scale(1.05);
     background-color: #8501C2;
+
+}
+
+@media screen and (max-width: 1024px) {
+    
+    .main-left h1{
+        font-size: 2.3rem;
+    }
+    
+    .main-left p{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .main-left h1{
+        font-size: 1.8rem;
+    }
+    
+    .main-left p{
+        font-size: 1.1rem;
+    }
+
+    .main{
+        display: block;
+
+    }
+
+    .main-left, .main-right{
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    .main-left h1{
+        margin: 1rem auto;
+    }
+
+    .main-left-text{
+        margin: 0 auto;
+        padding: 0;
+        text-align: center;
+    }
+
+    .booking h3{
+        font-size: 1.7rem;
+    }
+
+    .booking p{
+        font-size: 1rem;
+    }
+
+    .book-time{
+        padding: 10px 30px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    
+    .main{
+        padding: 0;
+    }
+
+    .main-left p{
+        font-size: 0.9rem;
+    }
+
+    .book-time{
+        padding: 10px 30px;
+    }
+
+    .booking p{
+        width: 90%;
+        font-size: 0.8rem;
+    }
 
 }

@@ -16,6 +16,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 <a href="{% url 'main' %}"><img class="logo" src="{% static 'main/img/logo.png' %}" alt=""></a>
+{% if ok == 'false' %}
 <section class="form">
     <h3 class="form_header_text">
         Оставить заявку
@@ -31,17 +32,15 @@
             {{ form.phone_number }}
             <span>{{ error }}</span>
         </div>
-        <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-        >Отправить
-        </button>
+        <button type="submit" class="btn btn-primary">Отправить</button>
     </form>
 </section>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{% endif %}
+{% if ok == 'true' %}
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Оповещение</h5>
+                <h5 class="modal-title">Оповещение</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -49,10 +48,11 @@
                 Скоро администратор свяжется с вами
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                <a type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="{% url 'main' %}">Закрыть</a>
             </div>
         </div>
     </div>
-</div>
+{% endif %}
+
 </body>
 </html>

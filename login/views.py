@@ -4,6 +4,8 @@ from django.urls import reverse
 
 from .forms import NewUserForm, LoginForm
 from .models import NewUser
+from django.contrib import messages
+
 
 
 def login(request):
@@ -37,9 +39,11 @@ def login(request):
 
 def form(request):
     error = ''
+    ok = 'false'
     if request.method == 'POST':
         post_form = NewUserForm(request.POST)
         if post_form.is_valid():
+            ok = 'true'
             post_form.save()
         else:
             error = 'Введены некорректные данные'
@@ -49,6 +53,7 @@ def form(request):
     data = {
         'form': form,
         'error': error,
+        'ok': ok
     }
 
     return render(request, 'login/form_index.html', data)

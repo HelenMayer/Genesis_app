@@ -5,65 +5,6 @@ body{
     background-color: #d3d3d385;
 }
 
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.2rem;
-}
-
-.nav{
-    display: flex;
-    list-style: none;
-    text-align: center;
-    font-weight: bold;
-}
-
-.nav a{
-    list-style: none;
-    text-decoration: none;
-    color: #3A4754;
-    display: block;
-    padding-left: 40px;
-    padding-right: 40px;
-    transition: all .6s ease;
-}
-
-.nav a:hover{
-    color: #8501C2;
-    transform: scale(1.05);
-}
-
-.logo{
-    width: 220px;
-    transition: all .6s ease;
-}
-
-.logo:hover{
-    transform: scale(1.05);
-}
-
-.btn-login{
-    padding: 10px 35px 10px 35px;
-    font-size: 0.8rem;
-    background-color: #202135;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    text-decoration: none;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: all .6s ease;
-}
-
-.btn-login:hover{
-    box-shadow: 0 0 0.7em 0 #8501C2, 0 0 0.7em 0 #8501C2;
-    transform: scale(1.05);
-}
 
 hr{
     color: #8501C2;
