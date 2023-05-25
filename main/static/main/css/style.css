@@ -1,18 +1,23 @@
+{% load static %}
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700;900&display=swap');
+
 body{
     display: block;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #3A4754;
+    font-family: 'Bitter', serif;
 }
 
 .content{
-    background-color: #d3d3d385;
+    background-color:  #e8e2f09d;
     height: min-content;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Bitter', serif;
     line-height: 1.5;
+    font-weight: 400;
 }
 
 .main{
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(133,1,194,1) 45%, rgba(0,212,255,0) 100%);
+    /*background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(133,1,194,1) 45%, rgba(0,212,255,0) 100%);*/
+    /*background-image: url("{% static 'main/img/background.png' %}");*/
     display: flex;
 }
 
@@ -35,12 +40,13 @@ body{
     width: 90%;
     text-shadow: 1px 1px black;
     line-height: 1;
+    font-weight: 400;
 
 }
 
 .main-left h4{
     font-size: 1.5rem;
-    color: #E8E8E8;
+    color: #18002396;
     width: 90%;
 }
 
@@ -51,12 +57,12 @@ body{
 .main-left a{
     padding: 15px 40px;
     font-size: 1rem;
-    background-color: #E8E8E8;
-    color: #202135;
+    font-weight: 400;
+    background-color: #8A00C8;
+    color: #E8E2F0;
     border-radius: 25px;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
     transition: all .6s ease;
     margin: 0 auto;
     margin-top: 4rem;
@@ -86,6 +92,8 @@ body{
 .about-us h3, .different-info h3{
     font-size: 2rem;
     color: #8A00C8;
+    text-shadow: 1px 1px black;
+    font-weight: 400;
 }
 
 .about-us p, .request p{
@@ -123,7 +131,6 @@ body{
     border-radius: 25px;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
     transition: all .6s ease;
     margin: 0 auto;
     display: block;
@@ -174,6 +181,8 @@ body{
 .request h3{
     color: #8A00C8;
     font-size: 2rem;
+    text-shadow: 1px 1px black;
+    font-weight: 400;
 }
 
 .request a{
@@ -188,7 +197,6 @@ body{
     border-radius: 3px;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
     transition: all .6s ease;
 }
 

@@ -1,21 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700;900&display=swap');
+
 body{
     background: rgb(2,0,36);
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(133,1,194,1) 45%, rgba(0,212,255,0) 100%);
-    margin: 3rem;
-    width: 95vw;
+    margin-top: 3rem;
+
     height: 95vh;
+    font-family: 'Bitter', serif;
 }
 
 .content{
     padding: 1rem;
     height: min-content;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 1.5;
     width: 330px;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
     border-radius: 10px;
+    background-color: #e8e2f09d;
 }
 
 form{
@@ -32,7 +35,7 @@ form{
 
 .logo{
     display: block;
-    width: 200px;
+    width: 250px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -46,4 +49,9 @@ form{
 
 .btn-new-account:hover{
     color: white;
+}
+
+.error-massage{
+    color: red;
+    font-size: 0.8rem;
 }

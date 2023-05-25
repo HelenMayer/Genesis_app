@@ -1,19 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700;900&display=swap');
+
 body{
     display: block;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #3A4754;
-    background-color: #d3d3d385;
+    background-color:  #e8e2f09d;
+    font-family: 'Bitter', serif;
 }
 
 
 .accordion{
-    width: 60%;
+    width: 70%;
     margin: 1rem auto;
 }
 
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
     cursor: pointer;
-    background-color: #D3D3D3;
+    background-color:  #65566c87;
 }
 
 .accordion-button:not(.collapsed){

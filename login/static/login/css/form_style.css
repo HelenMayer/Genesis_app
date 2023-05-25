@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-*{
-  font-family: 'Poppins', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700;900&display=swap');
 
 body{
     background: rgb(2,0,36);
@@ -9,6 +6,7 @@ body{
     margin: 3rem;
     width: 95vw;
     height: 95vh;
+    font-family: 'Bitter', serif;
 }
 
 .logo{

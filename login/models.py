@@ -14,3 +14,10 @@ class NewUser(models.Model):
 
     def __str__(self):
         return self.teams_name
+
+
+class Code(models.Model):
+    value = models.CharField('Код для входа в зал', max_length=15)
+
+    def __str__(self):
+        return self.value

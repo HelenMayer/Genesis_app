@@ -8,10 +8,12 @@ class Booking(models.Model):
     status = models.CharField('Статус', max_length=50)
     user_id = models.IntegerField('id пользователя')
 
-
     def __str__(self):
         return self.id
 
 
+class Code(models.Model):
+    value = models.CharField('Код для входа в зал', max_length=15)
 
-
+    def __str__(self):
+        return self.value
