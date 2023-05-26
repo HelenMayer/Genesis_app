@@ -1,10 +1,8 @@
 from django.shortcuts import render
-from .forms import NewUserForm, LoginForm
+from .forms import NewUserForm, LoginForm, ResetPasswordForm
 from .models import NewUser
 from .models import Code
 from django.http import HttpResponse
-from django.contrib.auth import authenticate, login
-from http import cookies
 
 
 def login(request):
@@ -59,7 +57,9 @@ def form(request):
         if post_form.is_valid():
             user_team_name = post_form.cleaned_data.get("teams_name")
             users = NewUser.objects.filter(teams_name=user_team_name)
-            if (users is None):
+            print(user_team_name)
+            print(users)
+            if (users.count() == 0):
                 ok = 'true'
                 post_form.save()
             else:
@@ -76,3 +76,34 @@ def form(request):
     }
 
     return render(request, 'login/form_index.html', data)
+
+
+def resetpassword(request):
+    error = ''
+    ok = False
+    reset_password = False
+    if request.method == 'POST':
+        post_form = ResetPasswordForm(request.POST)
+        if post_form.is_valid():
+            user_email = post_form.cleaned_data.get("email")
+            users = NewUser.objects.filter(email=user_email)
+            if (users):
+                new_user_password = post_form.cleaned_data.get("password")
+                users[0].password = new_user_password
+                users[0].save()
+                reset_password = True
+            else:
+                error = 'Указанная электронная почта не зарегистрирована'
+        else:
+            error = 'Введены некорректные данные'
+
+    form = ResetPasswordForm()
+
+    data = {
+        'form': form,
+        'error': error,
+        'ok': ok,
+        'reset_password': reset_password
+    }
+
+    return render(request, 'login/reset_password.html', data)

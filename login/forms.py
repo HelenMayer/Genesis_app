@@ -55,3 +55,23 @@ class LoginForm(ModelForm):
                 'type': 'password',
             })
         }
+
+
+class ResetPasswordForm(ModelForm):
+    class Meta:
+        model = NewUser
+        fields = ['email', 'password']
+
+        widgets = {
+            'email': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Введите email',
+                'type': 'email',
+                'id': 'exampleInputEmail1'
+            }),
+            'password': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Введите новый пароль',
+                'type': 'password',
+            })
+        }
