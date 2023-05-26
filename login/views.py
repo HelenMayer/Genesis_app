@@ -15,14 +15,13 @@ def login(request):
         if request.method == 'POST':
             post_form = LoginForm(request.POST)
             if post_form.is_valid():
-                    user = post_form.save()
                     user_login = post_form.cleaned_data.get("login")
                     password = post_form.cleaned_data.get("password")
                     login_id = NewUser.objects.filter(login=user_login)
                     password_id = NewUser.objects.filter(password=password)
                     if (login_id):
                         if (password_id):
-                            if (login_id[0].teams_name == password_id[0].teams_name):
+                            if (login_id[0].password == password):
                                 context = {'id': NewUser.objects.filter(login=user_login)[0].id, 'name': login_id[0].teams_name, 'code': code}
                                 rendered_template = render(request, 'user_account/user_account_index.html', context)
                                 response = HttpResponse(content=rendered_template)
@@ -58,8 +57,13 @@ def form(request):
     if request.method == 'POST':
         post_form = NewUserForm(request.POST)
         if post_form.is_valid():
-            ok = 'true'
-            post_form.save()
+            user_team_name = post_form.cleaned_data.get("teams_name")
+            users = NewUser.objects.filter(teams_name=user_team_name)
+            if (users is None):
+                ok = 'true'
+                post_form.save()
+            else:
+                error = 'Аккаунт такой команды уже создан. Войдите в аккаунт или свяжитесь с администратором'
         else:
             error = 'Введены некорректные данные'
 

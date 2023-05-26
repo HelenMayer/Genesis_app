@@ -31,11 +31,12 @@
             {{ form.teams_name }}
             {{ form.email }}
             {{ form.phone_number }}
-            <span>{{ error }}</span>
+            <span class="error-massage">{{ error }}</span>
         </div>
         <button type="submit" class="btn btn-primary">Отправить</button>
     </form>
 </section>
+<a href="{% url 'login' %}" class="btn-new-account">Войти в личный кабинет</a>
 {% endif %}
 {% if ok == 'true' %}
     <div class="modal-dialog">
