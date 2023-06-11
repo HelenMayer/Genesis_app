@@ -26,3 +26,11 @@ body{
 hr{
     color: #8501C2;
 }
+
+.accordion-body li{
+    list-style: circle;
+}
+
+.accordion-body a{
+    text-decoration: none;
+}

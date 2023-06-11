@@ -1,8 +1,13 @@
+from email.mime.multipart import MIMEMultipart
+
 from django.shortcuts import render
 from .forms import NewUserForm, LoginForm, ResetPasswordForm
 from .models import NewUser
 from .models import Code
 from django.http import HttpResponse
+import random
+import smtplib
+from email.mime.text import MIMEText
 
 
 def login(request):
@@ -88,10 +93,41 @@ def resetpassword(request):
             user_email = post_form.cleaned_data.get("email")
             users = NewUser.objects.filter(email=user_email)
             if (users):
-                new_user_password = post_form.cleaned_data.get("password")
-                users[0].password = new_user_password
+                new_password = ''
+                for x in range(10):  # Количество символов (10)
+                    new_password = new_password + random.choice(list('1234567890abcdefghigklmnopqrstuvyxwzABCDEFGHIGKLMNOPQRSTUVYXWZ'))
+                users[0].password = new_password
+                print(new_password)
                 users[0].save()
                 reset_password = True
+
+                fromaddr = "4.support@gtrk22.ru"
+                toaddr = "maier.elena0107@gmail.com"
+
+                msg = MIMEText('<html> <body> <h1> f"Привет! Это твой новый пароль для входа в личный кабинет на сайте genesis22.ru: {new_password}" </h1>' +
+                               '<p>send by <a href="http://www.python.org">Python</a>...</p>' +
+                               '</body></html>', 'html', 'utf-8')
+                msg['From'] = fromaddr
+                msg['To'] = toaddr
+                msg['Subject'] = "Восстановление пароля на genesis22.ru"
+
+                debug = False
+                if debug:
+                    print(msg.as_string())
+                else:
+                    print('начало отправки')
+                    server = smtplib.SMTP('gtrk22.ru', 25)
+                    print('1')
+                    server.starttls()
+                    print('2')
+                    server.login("4.support", "4SupportUse")
+                    print('3')
+                    text = msg.as_string()
+                    print('4')
+                    server.sendmail(fromaddr, toaddr, text)
+                    print('5')
+                    server.quit()
+                    print('письмо отправлено')
             else:
                 error = 'Указанная электронная почта не зарегистрирована'
         else:
