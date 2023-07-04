@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'main/css/reset.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'footer/css/footer_style.css' %}">
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -98,11 +99,7 @@
         <a href="{% url 'form' %}">Подать заявку</a>
         <br>
     </section>
-    <section class="links">
-        <i class="fa-brands fa-telegram"></i> <a class="telegram-link" href="https://t.me/genesisdancehall">https://t.me/genesisdancehall</a>
-        <i class="fa-solid fa-phone"></i><p> +7 952 000-90-29</p>
-    </section>
-
+    {% include 'footer/footer_index.html' %}
 </section>
 </body>
 </html>

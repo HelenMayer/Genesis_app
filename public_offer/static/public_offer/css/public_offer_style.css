@@ -1,0 +1,10 @@
+.offer{
+    width: 90%;
+    margin: 0 auto;
+    text-align: justify;
+    height: 100%;
+}
+
+.offer h2, .offer h4{
+    text-align: center;
+}

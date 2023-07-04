@@ -1,0 +1,20 @@
+{% load static %}
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'footer/css/footer_style.css' %}">
+
+<footer>
+    <hr>
+<section class="links">
+    <div><i class="fa-brands fa-telegram"></i> <a class="telegram-link" href="https://t.me/genesisdancehall">https://t.me/genesisdancehall</a></div>
+    <div><i class="fa-solid fa-phone"></i><span> +7 952 000-90-29</span></div>
+</section>
+<section class="contacts">
+    <ul>
+        <li><a href="{% url 'contacts' %}">Контакты</a></li>
+        <li><a href="{% url 'product' %}">Порядок оказания услуг</a></li>
+        <li><a href="{% url 'public_offer' %}">Публичная оферта</a></li>
+    </ul>
+</section>
+</footer>

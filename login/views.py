@@ -104,7 +104,7 @@ def resetpassword(request):
                 fromaddr = "4.support@gtrk22.ru"
                 toaddr = "maier.elena0107@gmail.com"
 
-                msg = MIMEText('<html> <body> <h1> f"Привет! Это твой новый пароль для входа в личный кабинет на сайте genesis22.ru: {new_password}" </h1>' +
+                msg = MIMEText('<html> <body> <h1> Привет! Это твой новый пароль для входа в личный кабинет на сайте genesis22.ru: { new_password } </h1>' +
                                '<p>send by <a href="http://www.python.org">Python</a>...</p>' +
                                '</body></html>', 'html', 'utf-8')
                 msg['From'] = fromaddr

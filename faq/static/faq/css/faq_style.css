@@ -5,12 +5,13 @@ body{
     color: #3A4754;
     background-color:  #e8e2f09d;
     font-family: 'Bitter', serif;
+    height: 100%;
 }
-
 
 .accordion{
     width: 70%;
     margin: 1rem auto;
+    height: 100%;
 }
 
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
@@ -33,4 +34,9 @@ hr{
 
 .accordion-body a{
     text-decoration: none;
+}
+
+footer{
+    position: absolute;
+    width: 100%;
 }

@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Порядок оказания услуги</title>
+    <link rel="icon" type="image/png" href="{% static 'main/img/favicon.png' %}"/>
+    <link rel="stylesheet" href="{% static 'main/css/reset.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'faq/css/faq_style.css' %}">
+    <link rel="stylesheet" href="{% static 'product/css/product_style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/header_style.css' %}">
+    <link rel="stylesheet" href="{% static 'footer/css/footer_style.css' %}">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    {% include 'main/header.html' %}
+    <hr>
+    <div class="product-info">
+    <h3>Порядок оказания услуги аренды танцевального зала</h3>
+        <ol>
+            <li>
+                <b>Стоимость услуги:</b>
+                <br>
+                <ul>
+                    <li>Аренда танцевального зала составляет 400 рублей за 1 час.</li>
+                </ul>
+            </li>
+            <li>
+                <b>Бронирование зала:</b>
+                <br>
+                <ul>
+                    <li>Для доступа к услугам бронирования зала подайте заявку, заполнив форму на сайте. С вами свяжется администратор и предоставит вам доступ в личный кабинет, через который осуществляется бронирование зала.</li>
+                    <li>Зал можно забронировать в личном кабинете, через специальную форму, где предоставлены подробности о доступном для бронирования времени. Для бронирования зала укажите желаемую дату и время аренды.</li>
+                    <li>После заполнения формы бронирования вы получите подтверждение брони на указанный вами адрес электронной почты.</li>
+                </ul>
+            </li>
+            <li>
+                <b>Оплата:</b>
+                <br>
+                <ul>
+                    <li>Оплата принимается только безналичным путем.</li>
+                </ul>
+            </li>
+            <li>
+                <b>Условия отказа от услуги и возврат денежных средств:</b>
+                <br>
+                <ul>
+                    <li>В случае отказа от услуги за 12 часов до времени бронирования зала, вам будет полностью возвращена стоимость аренды.</li>
+                    <li>Если вы отказываетесь от услуги менее чем за 12 часов до ее оказания, средства не возвращаются и оплата считается окончательной.</li>
+                </ul>
+            </li>
+            <li>
+                <b>Сроки отказа от услуги:</b>
+                <br>
+                <ul>
+                    <li>Для получения полного возврата средств, отказ от услуги должен быть произведен не позднее, чем за 12 часов до времени бронирования зала.</li>
+                </ul>
+            </li>
+        </ol>
+        <p>Обратите внимание, что указанная информация может быть изменена организацией, предоставляющей услугу аренды танцевального зала.
+Рекомендуется связаться с ними непосредственно или проверить актуальную информацию на их сайте для получения точной и актуальной информации о порядке оказания услуг и условиях отказа от них.</p>
+    </div>
+   {% include 'footer/footer_index.html' %}
+</body>
+</html>

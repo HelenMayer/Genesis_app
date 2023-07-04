@@ -15,6 +15,7 @@ hr{
 .alert{
     width: 70%;
     margin: 0.5rem auto;
+    height: 100%;
 }
 
 .alert h3{
@@ -25,3 +26,4 @@ hr{
     font-size: 0.7rem;
     color: #d3d3d3;
 }
+
